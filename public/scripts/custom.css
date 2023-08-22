@@ -1,0 +1,14 @@
+.nav-item .active, .btn-info {
+    background-color: lightseagreen !important;
+    color: white !important;
+    border: none;
+}
+
+
+.despl {
+    max-width: fit-content;
+}
+
+textarea {
+    background-color:transparent !important;
+}

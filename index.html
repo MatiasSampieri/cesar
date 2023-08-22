@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="scripts/bootstrap.min.css">
+    <link rel="stylesheet" href="scripts/custom.css">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <title>Cesar</title>
+</head>
+
+<body>
+    <div class="navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Cifrado Cesar</a>
+
+                <div class="navbar-left navbar-expand me-auto">
+                    <ul class="navbar-nav me-auto mb-lg-0 nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="btn_cifrar" href="#cifrar">Cifrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="btn_descifrar" href="#descifrar">Descifrar</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- CIFRADO -->
+    <div id="div_cifrar" class="card-body">
+        <h1>Cifrar Mensaje</h1>
+        <form id="frm_cifrar" class="form-row align-items-left">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="cifrar_despla">Desplazamiento: </label>
+                <div class="col-sm-10 w-25">
+                    <input class="form-control despl" type="number" id="cifrar_despla" name="cifrar_despla" min="1" max="26" value="1" />
+                </div>    
+            </div>
+            <textarea required placeholder="Escriba un mensaje..." class="form-control mt-2" id="cifrar_mensaje" rows="5" cols="50"></textarea>
+            <input type="submit" class="btn btn-info mt-2" value="Cifrar Mensaje" />
+        </form>
+
+        <textarea readonly class="form-control mt-2" id="mensaje_cifrado" rows="5" cols="50"></textarea>
+    </div>
+
+    <!-- DESCIFRADO -->
+    <div id="div_descifrar" class="card-body" style="display: none;">
+        <h1>Descifrar Mensaje</h1>
+        <form id="frm_descifrar" class="form-row align-items-left">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="descifrar_despla">Desplazamiento: </label>
+                <div class="col-sm-10 w-25">
+                    <input class="form-control despl" type="number" id="descifrar_despla" name="descifrar_despla" min="1" max="26" value="1" />
+                </div>  
+            </div>
+            <div class="form-check form-switch my-3">
+                <input class="form-check-input" type="checkbox" id="adivinar_despl"/>
+                <label class="form-check-label" for="adivinar_despl">No tengo el desplazamiento.</label>
+            </div>
+            <textarea required placeholder="Escriba un mensaje cifrado..." class="form-control mt-2" id="descifrar_mensaje" rows="5" cols="50"></textarea>
+            <input type="submit" class="btn btn-info mt-2" value="Descifrar Mensaje" />
+        </form>
+
+        <textarea readonly class="form-control mt-2" id="mensaje_descifrado" rows="5" cols="50"></textarea>
+        <p id="duracion"></p>
+    </div>
+</body>
+
+</html>
